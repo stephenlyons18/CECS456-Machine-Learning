@@ -1,0 +1,64 @@
+find missing values for multiple linear regression
+
+colinearity is a problem in multiple linear regression because
+
+
+y = x1b1 + x2b2 + x3b3 + ...
+
+number of categories minus 
+
+
+dummy variable trapping 
+
+null hypothesis for multiple linear regression
+
+P-value is used to determine the significance of the regression coefficient in multiple linear regression
+
+the regression coefficient is the slope of the line in multiple linear regression
+
+garbage in = garbage out
+
+looking for simplistic representation of the data
+
+less is more
+
+model building:
+1. All in 
+    - prior knowledge; or
+    - you have to; or
+    - preparing for backward elimination
+2. Backward elimination
+    - select a significance level to stay in the model (e.g. SL = 0.05)
+    - fit the full model with all possible predictors
+    - consider the predictor with the highest P-value. If P > SL, go to step 4, otherwise go to FIN
+    - remove the predictor
+    - fit model without this variable
+3. Forward selection
+    - select a significance level to enter the model (e.g. SL = 0.05)
+    - fit all simple regression models y ~ Xn, select the one with the lowest P-value
+    - keep this variable and fit all possible models with one extra predictor added to the one(s) you already have
+    - consider the predictor with the lowest P-value. If P < SL, go to step 3, otherwise go to FIN
+4. Bidirectional elimination
+    - select a significance level to enter and to stay in the model (e.g. SLENTER = 0.05, SLSTAY = 0.05)
+    - perform the next step of both forward and backward elimination
+    - no new variables can enter and no old variables can exit
+
+5. Score comparison
+    - select a criterion of goodness of fit (e.g. Akaike criterion)
+    - construct all possible regression models: 2^n - 1 total combinations
+    - select the one with the best criterion
+
+
+6. All possible models
+    - select a criterion of goodness of fit (e.g. Akaike criterion)
+    - construct all possible regression models: 2^n - 1 total combinations
+    - select the one with the best criterion
+
+Backward elimination
+
+modeling steps - multiple linear regression
+    -importing the libraries and dataset
+    -encoding categorical data
+    -splitting the dataset into the training set and test set
+    -training the multiple linear regression model on the training set
+    -predicting the test set results 
