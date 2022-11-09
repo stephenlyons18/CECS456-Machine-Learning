@@ -37,6 +37,7 @@ with youtube_dl.YoutubeDL({'outtmpl': '%(id)s%(ext)s'}) as ydl:
     video_title = info_dict.get('title', None)
 
 
+
 # In[ ]:
 
 
@@ -60,6 +61,9 @@ print(transcript)
 
 
 # In[8]:
+# clean the title of the video to use it as the name of the file (remove special characters)
+video_title = video_title.replace(" ", "_").replace(":", "").replace("?", "").replace("/", "").replace("\\", "").replace("|", "").replace("*", "").replace("<", "").replace(">", "").replace("\"", "").replace(".", "")
+
 
 
 # save the transcript of the video in a text file with the name of the video
